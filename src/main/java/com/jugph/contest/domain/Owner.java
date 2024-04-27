@@ -14,7 +14,37 @@
  */
 package com.jugph.contest.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Owner {
 
+    String name;
+    private List<Pet> pets;
+
+    public Owner(String name) {
+        this.name = name;
+        this.pets = new ArrayList<>();
+    }
+
     // Add attributes/methods of an Owner. The owner can own many pets
+    public void addPet(Pet pet){
+        pets.add(pet);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Pet> getPets() {
+        return pets;
+    }
+
+    public void setPets(List<Pet> pets) {
+        this.pets = pets;
+    }
 }

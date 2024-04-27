@@ -14,12 +14,61 @@
  */
 package com.jugph.contest.domain;
 
+import com.jugph.contest.behaviors.Feedable;
+import com.jugph.contest.behaviors.Playable;
+
 // This is a generic Pet
-public abstract class Pet {
+public abstract class Pet implements Playable, Feedable {
+
+    String name;
+    String mood;
+    String type;
+
+    public Pet(String name, String type) {
+        this.name = name;
+        this.type = type;
+        this.mood = "Meh";
+    }
+
+    @Override
+    public void feed() {
+        System.out.println(type + ": " + name + "is eating");
+        mood = "Happy";
+    }
+
+    @Override
+    public void play() {
+        System.out.println(type + ": " + name + "is eating");
+        mood = "Happy";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getMood() {
+        return mood;
+    }
+
+    public void setMood(String mood) {
+        this.mood = mood;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     // A pet can have a name, type and mood state (Sad, Happy, Hungry). These attributes can be inheritable.
 
-    abstract void talk();
+    public abstract void talk();
 
-    abstract void walk();
+    public abstract void walk();
 }

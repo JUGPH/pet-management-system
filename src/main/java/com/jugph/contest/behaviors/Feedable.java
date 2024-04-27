@@ -15,4 +15,5 @@
 package com.jugph.contest.behaviors;
 
 public interface Feedable {
+    void feed();
 }

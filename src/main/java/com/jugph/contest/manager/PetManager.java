@@ -14,10 +14,26 @@
  */
 package com.jugph.contest.manager;
 
+import com.jugph.contest.domain.Pet;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class PetManager {
 
-
     // Add an owner
+    private List<Pet> pets;
+
+    public PetManager() {
+        this.pets = new ArrayList<>();
+    }
 
     // Add a pet to an owner
+    public void addPet(Pet pet) {
+        pets.add(pet);
+    }
+
+    public List<Pet> getPets() {
+        return pets;
+    }
 }

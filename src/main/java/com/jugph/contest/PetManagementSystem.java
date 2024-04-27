@@ -14,6 +14,11 @@
  */
 package com.jugph.contest;
 
+import com.jugph.contest.domain.Owner;
+import com.jugph.contest.domain.Pet;
+import com.jugph.contest.domain.pets.Cat;
+import com.jugph.contest.domain.pets.Dog;
+
 public class PetManagementSystem {
 
     public static void main(String[] args) {
@@ -21,6 +26,24 @@ public class PetManagementSystem {
         /*
          * This is the main class. This will be used for printing the results.
          */
+
+        Pet dog = new Dog("Eloy");
+        Pet cat = new Cat("Ming ming");
+
+        Owner owner1 = new Owner("Miguel");
+        owner1.addPet(dog);
+        owner1.addPet(cat);
+
+        dog.play();
+        cat.feed();
+
+        System.out.println("Owner: " + owner1.getName());
+
+        for (Pet pet: owner1.getPets()) {
+            System.out.println("Pet: " + pet.getName() + "\nType: " + pet.getType() + "\nMood: " + pet.getMood());
+            pet.talk();
+            pet.walk();
+        }
 
     }
 }
