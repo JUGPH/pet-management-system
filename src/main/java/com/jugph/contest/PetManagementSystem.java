@@ -18,6 +18,7 @@ import com.jugph.contest.domain.Owner;
 import com.jugph.contest.domain.Pet;
 import com.jugph.contest.domain.pets.Cat;
 import com.jugph.contest.domain.pets.Dog;
+import com.jugph.contest.domain.pets.Piglet;
 
 public class PetManagementSystem {
 
@@ -29,18 +30,33 @@ public class PetManagementSystem {
 
         Pet dog = new Dog("Eloy");
         Pet cat = new Cat("Ming ming");
+        Pet piglet = new Piglet("Ton ton");
 
         Owner owner1 = new Owner("Miguel");
         owner1.addPet(dog);
         owner1.addPet(cat);
 
+        Owner owner2 = new Owner("Luka");
+        owner1.addPet(dog);
+        owner1.addPet(piglet);
+        owner1.addPet(cat);
+
         dog.play();
         cat.feed();
+        piglet.play();
+        piglet.feed();
 
         System.out.println("Owner: " + owner1.getName());
+        System.out.println("Owner: " + owner2.getName());
 
         for (Pet pet: owner1.getPets()) {
-            System.out.println("Pet: " + pet.getName() + "\nType: " + pet.getType() + "\nMood: " + pet.getMood());
+            System.out.println("Pet: " + pet.getName() + "\nType: " + pet.getType() + "\nMood: " + pet.getMood() +"\n");
+            pet.talk();
+            pet.walk();
+        }
+
+        for (Pet pet: owner2.getPets()) {
+            System.out.println("Pet: " + pet.getName() + "\nType: " + pet.getType() + "\nMood: " + pet.getMood() + "\n");
             pet.talk();
             pet.walk();
         }

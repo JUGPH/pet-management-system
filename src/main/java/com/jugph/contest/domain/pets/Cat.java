@@ -10,13 +10,13 @@ public class Cat extends Pet {
 
     @Override
     public void play() {
-        System.out.println(getName() + "the cat is playing...");
+        System.out.println(getName() + " the cat is playing...");
         setMood("Happy");
     }
 
     @Override
     public void feed() {
-        System.out.println(getName() + "the cat is being fed...");
+        System.out.println(getName() + " the cat is being fed...");
         setMood("Happy");
     }
 
